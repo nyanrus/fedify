@@ -5,16 +5,16 @@
  * `actor-id-required`, parses the JSON diagnostics, and asserts the
  * `@fedify/lint/actor-id-required` rule fires.
  *
- * Skipped when the `oxlint` binary is not on PATH or the built plugin is
- * missing under `dist/`.
+ * Skipped when the `oxlint` binary cannot be located or the built plugin
+ * is missing under `dist/`.
  */
+import { test } from "@fedify/fixture";
 import { ok } from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import process from "node:process";
-import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -22,8 +22,13 @@ const pluginPath = resolve(here, "../../dist/oxlint.js");
 const pluginBuilt = existsSync(pluginPath);
 
 function findOxlint(): string | null {
-  const candidate = resolve(here, "../../../../node_modules/.bin/oxlint");
-  if (existsSync(candidate)) return candidate;
+  const candidates = [
+    resolve(here, "../../node_modules/.bin/oxlint"),
+    resolve(here, "../../../../node_modules/.bin/oxlint"),
+  ];
+  for (const candidate of candidates) {
+    if (existsSync(candidate)) return candidate;
+  }
   const where = spawnSync(
     process.platform === "win32" ? "where" : "which",
     ["oxlint"],
@@ -36,11 +41,7 @@ function findOxlint(): string | null {
 }
 
 const oxlintBin = findOxlint();
-const skipReason = !pluginBuilt
-  ? "skip: dist/oxlint.js missing — run `pnpm build` first"
-  : !oxlintBin
-  ? "skip: oxlint binary not found on PATH"
-  : null;
+const ignore = !pluginBuilt || !oxlintBin;
 
 const BAD_CODE =
   `import { createFederation, InProcessMessageQueue, MemoryKvStore } from "@fedify/fedify";
@@ -70,7 +71,7 @@ interface OxlintJsonReport {
 
 test(
   "oxlint plugin: actor-id-required fires on missing id",
-  { skip: skipReason ?? false },
+  { ignore },
   () => {
     const dir = mkdtempSync(join(tmpdir(), "fedify-lint-oxlint-"));
     writeFileSync(

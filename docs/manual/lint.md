@@ -272,9 +272,7 @@ plugins. `@fedify/lint` exposes its rules through oxlint's [JS plugin API]
 via the `@fedify/lint/oxlint` subpath export.
 
 > [!NOTE]
-> oxlint's JS plugin API is currently in alpha and the loader runs only under
-> Node.js. The `@fedify/lint/oxlint` subpath is therefore distributed via npm
-> only, not JSR.
+> oxlint's JS plugin API is currently in alpha and not subject to semver.
 
 [JS plugin API]: https://oxc.rs/docs/guide/usage/linter/writing-js-plugins.html
 
