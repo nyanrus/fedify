@@ -315,8 +315,6 @@ the [*Rules* section](#rules) below:
 }
 ~~~~
 
-[Rules]: #rules
-
 ### Running Oxlint
 
 Add a script to _package.json_:
