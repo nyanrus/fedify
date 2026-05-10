@@ -297,7 +297,7 @@ Rule IDs are namespaced under `@fedify/lint/`, matching the ESLint preset.
 ### Custom configuration
 
 Each rule accepts `"error"`, `"warn"`, or `"off"`. Enable any subset listed in
-the [Rules] section below:
+the [*Rules* section](#rules) below:
 
 ~~~~ json
 {
