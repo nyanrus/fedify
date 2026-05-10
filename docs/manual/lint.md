@@ -1,6 +1,6 @@
 ---
 description: >-
-  Fedify provides linting plugins for Deno Lint, ESLint, and oxlint to help you
+  Fedify provides linting plugins for Deno Lint, ESLint, and Oxlint to help you
   catch common mistakes and enforce best practices when building federated
   server apps.
 ---
@@ -16,7 +16,7 @@ _This package is available since Fedify 2.0.0._
 
 Fedify provides the [`@fedify/lint`] package, which includes lint rules
 specifically designed for Fedify applications. It supports [Deno Lint],
-[ESLint], and [oxlint], so you can use it regardless of your
+[ESLint], and [Oxlint], so you can use it regardless of your
 JavaScript/TypeScript runtime.
 
 The plugin includes rules that check for:
@@ -30,7 +30,7 @@ The plugin includes rules that check for:
 [`@fedify/lint`]: https://jsr.io/@fedify/lint
 [Deno Lint]: https://docs.deno.com/runtime/reference/lint_plugins/
 [ESLint]: https://eslint.org/
-[oxlint]: https://oxc.rs/docs/guide/usage/linter/
+[Oxlint]: https://oxc.rs/docs/guide/usage/linter/
 
 
 Installation
@@ -267,12 +267,12 @@ bunx eslint .
 Oxlint
 ------
 
-[oxlint] is a fast Rust-based linter that supports ESLint-compatible JS
-plugins. `@fedify/lint` exposes its rules through oxlint's [JS plugin API]
+[Oxlint] is a fast Rust-based linter that supports ESLint-compatible JS
+plugins. `@fedify/lint` exposes its rules through Oxlint's [JS plugin API]
 via the `@fedify/lint/oxlint` subpath export.
 
 > [!NOTE]
-> oxlint's JS plugin API is currently in alpha and not subject to semver.
+> Oxlint's JS plugin API is currently in alpha and not subject to semver.
 
 [JS plugin API]: https://oxc.rs/docs/guide/usage/linter/writing-js-plugins.html
 
@@ -317,7 +317,7 @@ the [Rules] section below:
 
 [Rules]: #rules
 
-### Running oxlint
+### Running Oxlint
 
 Add a script to _package.json_:
 
@@ -351,7 +351,7 @@ bun lint
 
 :::
 
-Or invoke oxlint directly:
+Or invoke Oxlint directly:
 
 ::: code-group
 
@@ -1329,12 +1329,12 @@ See also
  -  [`@fedify/lint` on npm]
  -  [Deno Lint plugins documentation]
  -  [ESLint documentation]
- -  [oxlint documentation]
+ -  [Oxlint documentation]
  -  [Example project]
 
 [`@fedify/lint` on JSR]: https://jsr.io/@fedify/lint
 [`@fedify/lint` on npm]: https://www.npmjs.com/package/@fedify/lint
 [Deno Lint plugins documentation]: https://docs.deno.com/runtime/reference/lint_plugins/
 [ESLint documentation]: https://eslint.org/
-[oxlint documentation]: https://oxc.rs/docs/guide/usage/linter/
+[Oxlint documentation]: https://oxc.rs/docs/guide/usage/linter/
 [Example project]: https://github.com/fedify-dev/fedify/tree/main/examples/lint

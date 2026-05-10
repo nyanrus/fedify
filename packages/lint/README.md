@@ -9,7 +9,7 @@
 
 *This package is available since Fedify 2.0.0.*
 
-This package provides [Deno Lint], [ESLint], and [oxlint] plugins with lint
+This package provides [Deno Lint], [ESLint], and [Oxlint] plugins with lint
 rules specifically designed for [Fedify] applications.  It helps you catch
 common mistakes and enforce best practices when building federated server apps
 with Fedify.
@@ -30,7 +30,7 @@ The plugin includes rules that check for:
 [@fedify@hollo.social]: https://hollo.social/@fedify
 [Deno Lint]: https://docs.deno.com/runtime/reference/lint_plugins/
 [ESLint]: https://eslint.org/
-[oxlint]: https://oxc.rs/docs/guide/usage/linter/
+[Oxlint]: https://oxc.rs/docs/guide/usage/linter/
 [Fedify]: https://fedify.dev/
 
 ### Deno Lint configuration example
@@ -419,15 +419,15 @@ bunx eslint .
 :::
 
 
-Usage (oxlint)
+Usage (Oxlint)
 --------------
 
-[oxlint] is a fast Rust-based linter that supports ESLint-compatible JS plugins.
-The `@fedify/lint/oxlint` subpath export plugs the Fedify rules into oxlint's
+[Oxlint] is a fast Rust-based linter that supports ESLint-compatible JS plugins.
+The `@fedify/lint/oxlint` subpath export plugs the Fedify rules into Oxlint's
 [JS plugin API].
 
 > [!NOTE]
-> oxlint's JS plugin API is currently in alpha and not subject to semver.
+> Oxlint's JS plugin API is currently in alpha and not subject to semver.
 
 [JS plugin API]: https://oxc.rs/docs/guide/usage/linter/writing-js-plugins.html
 
@@ -470,7 +470,7 @@ rule can be set to `"error"`, `"warn"`, or `"off"`:
 }
 ~~~~
 
-### Running oxlint
+### Running Oxlint
 
 Add a script to *package.json*:
 
@@ -504,7 +504,7 @@ bun lint
 
 :::
 
-Or invoke oxlint directly:
+Or invoke Oxlint directly:
 
 ::: code-group
 

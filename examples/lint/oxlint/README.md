@@ -1,19 +1,19 @@
 <!-- deno-fmt-ignore-file -->
 
-@fedify/lint with oxlint
+@fedify/lint with Oxlint
 ========================
 
-This example demonstrates how to use [`@fedify/lint`] together with [oxlint]
+This example demonstrates how to use [`@fedify/lint`] together with [Oxlint]
 to catch common Fedify federation mistakes.
 
 [`@fedify/lint`]: https://www.npmjs.com/package/@fedify/lint
-[oxlint]: https://oxc.rs/docs/guide/usage/linter/
+[Oxlint]: https://oxc.rs/docs/guide/usage/linter/
 
 
 Layout
 ------
 
- -  *.oxlintrc.json* — oxlint configuration that enables `@fedify/lint`
+ -  *.oxlintrc.json* — Oxlint configuration that enables `@fedify/lint`
     via the JS plugin API.
  -  *federation.ts* — code that intentionally violates several rules
     (missing `id`, `inbox`, `outbox`, `followers`).
@@ -54,7 +54,7 @@ The plugin is loaded via the `jsPlugins` field in *.oxlintrc.json*:
 ~~~~
 
 `@fedify/lint/oxlint` is a subpath export that exposes the same rules as the
-ESLint plugin in oxlint's plugin shape. Rule IDs are namespaced under
+ESLint plugin in Oxlint's plugin shape. Rule IDs are namespaced under
 `@fedify/lint/`.
 
 See the [Linting] manual for the full rule reference.
