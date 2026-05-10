@@ -4,7 +4,8 @@
 ========================
 
 This example demonstrates how to use [`@fedify/lint`] together with [Oxlint]
-to catch common Fedify federation mistakes.
+to catch common Fedify federation mistakes.  Note that Oxlint's JS plugin
+support is upstream alpha and may be unstable.
 
 [`@fedify/lint`]: https://www.npmjs.com/package/@fedify/lint
 [Oxlint]: https://oxc.rs/docs/guide/usage/linter/
