@@ -65,7 +65,7 @@ export default fedifyLint;
 
 ### Oxlint configuration example
 
-~~~~ json
+~~~~ jsonc
 // .oxlintrc.json
 
 {
